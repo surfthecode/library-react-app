@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import BookCardsContainer from "./BookCardsContainer";
-import AuthorTitlesContainer from "./AuthorTitlesContainer";
+import AuthorBioContainer from "./AuthorBioContainer";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap";
