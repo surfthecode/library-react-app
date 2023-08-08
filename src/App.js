@@ -1,8 +1,18 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./assets/styles/App.css";
+
+import Navigation from "./components/Navigation";
+import Header from "./components/Header";
+import BookCard from "./components/BookCard";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <>
+      <Navigation />
+      <Header />
+      <BookCard />
+    </>
+  );
 }
 
 export default App;
