@@ -5,7 +5,7 @@ import "bootstrap/dist/js/bootstrap";
 
 import BookCard from "../components/BookCard";
 
-const BookCardContainer = () => {
+const BookCardsContainer = () => {
   return (
     <>
       <BookCard />
@@ -13,4 +13,4 @@ const BookCardContainer = () => {
   );
 };
 
-export default BookCardContainer;
+export default BookCardsContainer;

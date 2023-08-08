@@ -3,14 +3,14 @@ import "./assets/styles/App.css";
 
 import Navigation from "./components/Navigation";
 import Header from "./components/Header";
-import BookCardContainer from "./containers/BookCardContainer";
+import SearchResultsContainer from "./containers/SearchResultsContainer";
 
 function App() {
   return (
     <>
       <Navigation />
       <Header />
-      <BookCardContainer />
+      <SearchResultsContainer />
     </>
   );
 }

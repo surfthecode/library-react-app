@@ -11,9 +11,15 @@ function Header() {
         <div className="col col-12 col-sm-4 col-md-3">
           <Form.Select aria-label="search criteria" className="headerForm">
             <option>Search by:</option>
-            <option value="author">Author</option>
-            <option value="title">Title</option>
-            <option value="category">Category</option>
+            <option value="author" className="search-author">
+              Author
+            </option>
+            <option value="title" className="search-title">
+              Title
+            </option>
+            <option value="category" className="search-category">
+              Category
+            </option>
           </Form.Select>
         </div>
         <div className="col col-12 col-sm-8 col-md-9">
