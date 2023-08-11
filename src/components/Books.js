@@ -3,11 +3,14 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap";
 
+import defaultCover from "../assets/images/no-book-cover-available.jpg";
+
 const Books = ({ data }) => {
   return (
     <div className="books">
       {data.docs &&
         data.docs.map((book) => {
+          console.log(book);
           // Extract the relevant information for each book
           const title = book.title;
           const author = book.author_name ? book.author_name[0] : "Unknown";
@@ -20,7 +23,11 @@ const Books = ({ data }) => {
           // Render each book as a card with the information and a link
           return (
             <div className="card" key={book.key}>
-              <img src={coverUrl} alt={title} className="card-img-top" />
+              <img
+                src={coverUrl ? coverUrl : defaultCover} //check for missing cover -> display my default cover
+                alt={title}
+                className="card-img-top"
+              />
               <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">By {author}</p>
