@@ -50,7 +50,7 @@ function Header() {
             </option>
           </Form.Select>
         </div>
-        <form onSubmit={handleSearchClick}>
+        <form className="col" onSubmit={handleSearchClick}>
           <div className="col col-12 col-sm-8 col-md-9">
             <input
               type="text"
@@ -72,6 +72,7 @@ function Header() {
           </div>
         </form>
       </div>
+      {/* renders 2x in page becasue of how it's written */}
       <BooksContainer
         searchCriteria={searchCriteria}
         searchInput={searchInput}
