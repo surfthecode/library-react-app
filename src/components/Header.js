@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap";
 import Form from "react-bootstrap/Form";
+import BooksContainer from "../containers/BooksContainer";
 
 function Header() {
   const [searchCriteria, setSearchCriteria] = useState("default");
+  const [searchInput, setSearchInput] = useState("");
+  const [searchClicked, setSearchClicked] = useState(false); // Add this state variable
 
   const handleSearchCriteriaChange = (e) => {
     const selectedCriteria = e.target.value;
@@ -13,7 +16,16 @@ function Header() {
     setSearchCriteria(selectedCriteria);
   };
 
-  console.log(searchCriteria);
+  const handleSearchInputChange = (e) => {
+    const input = e.target.value;
+
+    setSearchInput(input);
+  };
+
+  const handleSearchClick = (e) => {
+    e.preventDefault();
+    setSearchClicked(!searchClicked); // Toggle the state
+  };
 
   return (
     <div className="container header-container">
@@ -21,7 +33,7 @@ function Header() {
         <div className="col col-12 col-sm-4 col-md-3">
           <Form.Select
             aria-label="search criteria"
-            className="headerForm"
+            className="header-form"
             id="search-criteria"
             value={searchCriteria}
             onChange={handleSearchCriteriaChange}
@@ -33,20 +45,39 @@ function Header() {
             <option value="title" className="search-title">
               Title
             </option>
-            <option value="category" className="search-category">
+            <option value="subject" className="search-subject">
               Category
             </option>
           </Form.Select>
         </div>
-        <div className="col col-12 col-sm-8 col-md-9">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="your text here"
-            aria-label="search input"
-          />
-        </div>
+        <form onSubmit={handleSearchClick}>
+          <div className="col col-12 col-sm-8 col-md-9">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="your text here"
+              aria-label="search input"
+              value={searchInput}
+              onChange={handleSearchInputChange}
+            />
+          </div>
+          <div className="col">
+            <button
+              type="submit"
+              className="btn btn-outline-success form-btn"
+              onClick={handleSearchClick}
+            >
+              Search
+            </button>
+          </div>
+        </form>
       </div>
+      <BooksContainer
+        searchCriteria={searchCriteria}
+        searchInput={searchInput}
+        searchClicked={searchClicked}
+        setSearchClicked={setSearchClicked}
+      />
     </div>
   );
 }
