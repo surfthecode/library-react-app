@@ -10,21 +10,20 @@ const Books = ({ data }) => {
     <div className="books">
       {data.docs &&
         data.docs.map((book) => {
-          console.log(book);
           // Extract the relevant information for each book
           const title = book.title;
           const author = book.author_name ? book.author_name[0] : "Unknown";
           const coverId = book.cover_i;
           const coverUrl = coverId
             ? `http://covers.openlibrary.org/b/id/${coverId}-M.jpg`
-            : "https://via.placeholder.com/150";
+            : { defaultCover };
           const bookUrl = `https://openlibrary.org${book.key}`;
 
           // Render each book as a card with the information and a link
           return (
             <div className="card" key={book.key}>
               <img
-                src={coverUrl ? coverUrl : defaultCover} //check for missing cover -> display my default cover
+                src={coverUrl ? coverUrl : defaultCover}
                 alt={title}
                 className="card-img-top"
               />

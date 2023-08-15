@@ -38,7 +38,8 @@ function Header() {
             value={searchCriteria}
             onChange={handleSearchCriteriaChange}
           >
-            <option value="default">Search by:</option>
+            <option value=" ">Search by:</option>
+
             <option value="author" className="search-author">
               Author
             </option>
