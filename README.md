@@ -2,4 +2,6 @@
 
 ## Using React.JS
 
-- Data fetching from <https://openlibrary.org/>
+- Bootstrapped
+- Books data from <https://openlibrary.org/> API
+- Deployed at: <https://surfthecode.github.io/library-react-app/>
