@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3044c015.css",
+    "main.js": "/static/js/main.c5f10434.js",
+    "static/js/787.2548bcb7.chunk.js": "/static/js/787.2548bcb7.chunk.js",
+    "static/media/no-book-cover-available.jpg": "/static/media/no-book-cover-available.19a0b7111c60ddef9f5e.jpg",
+    "index.html": "/index.html",
+    "main.3044c015.css.map": "/static/css/main.3044c015.css.map",
+    "main.c5f10434.js.map": "/static/js/main.c5f10434.js.map",
+    "787.2548bcb7.chunk.js.map": "/static/js/787.2548bcb7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3044c015.css",
+    "static/js/main.c5f10434.js"
+  ]
+}
